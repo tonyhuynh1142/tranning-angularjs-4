@@ -7,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
   name = "";
+  evenStyle = { color: 'red', fontSize: '40px'};
+  oddStyle = { color: 'blue', fontSize: '20px'};
+  isHighlight = true;
   constructor() { }
 
   ngOnInit() {
   }
-
-  // using event binding
-  // showText(event) {
-  //   this.name = event.target.value;
-  // }
 }
