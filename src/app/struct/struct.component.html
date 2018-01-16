@@ -2,5 +2,9 @@
   struct works!
 </p>
 
+<ul class="list-group">
+  <li *ngFor="let subject of arrSubjects; let i = index;" class="list-group-item">{{ i + 1 }} - {{ 'Subject :' + subject}}</li>
+</ul>
+
 <br>
 <button (click)="isShow = !isShow" >Toggle</button>
