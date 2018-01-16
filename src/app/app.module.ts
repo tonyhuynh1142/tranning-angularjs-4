@@ -2,21 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-// import { AppComponent } from './app.component';
-import { WordComponent } from './word.component';
-// import { WordComponent } from './word/WordComponent.component';
-
+import { AppComponent } from './app.component';
+import { WordComponent } from './word/word.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
-    // AppComponent,
-    WordComponent
+    AppComponent,
+    WordComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  // bootstrap: [AppComponent]
-  bootstrap: [WordComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

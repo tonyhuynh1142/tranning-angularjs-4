@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './word.component.html',
   styleUrls: ['./word.component.css']
 })
-export class WordComponent implements OnInit {
+export class WordComponent {
+  en = "Hello";
+  vn = "Xin chao";
+  forgot = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  toggleForgot() {
+    this.forgot = !this.forgot;
   }
-
 }
