@@ -1,7 +1,7 @@
 <div class="body">
   <div class="input-group">
     <input type="text" name="" id="" placeholder="Enter name" [(ngModel)]="name" #txtUsername>
-    <h3 [style.color]="isHighlight ? 'red' : 'black' ">Your name is: {{ name }} </h3>
+    <h3 [ngStyle]="name.length % 2 === 0 ? evenStyle : oddStyle ">Your name is: {{ name }} </h3>
   </div>
 
   <div [class]="isHighlight ? 'circle' : 'square'"></div>
@@ -9,6 +9,8 @@
   <br>
   <div [class.circle]="!isHighlight" [class.square]="isHighlight"></div>
 
+  <br>
+  <div [ngClass]="currentClass"></div>
 
   <br>
   <code> {{ txtUsername.value | json}} </code>

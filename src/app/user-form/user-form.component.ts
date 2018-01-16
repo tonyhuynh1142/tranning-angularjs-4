@@ -10,6 +10,7 @@ export class UserFormComponent implements OnInit {
   evenStyle = { color: 'red', fontSize: '40px'};
   oddStyle = { color: 'blue', fontSize: '20px'};
   isHighlight = true;
+  currentClass = { circle: !this.isHighlight, square : this.isHighlight }
   constructor() { }
 
   ngOnInit() {
