@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class StructComponent implements OnInit {
 
   isShow = true;
-  arrSubjects = ['Angular', 'NodeJs', 'Reacr'];
+  arrSubjects = ['Angular', 'NodeJs', 'React'];
 
   constructor() { }
 
