@@ -1,0 +1,12 @@
+
+<!-- using event binding -->
+<!-- <div class="input-group">
+  <input type="text" name="" id="" placeholder="Enter name" (keyup)="showText($event);">
+  <h3>Your name is: {{ name }} </h3>
+</div> -->
+
+<!-- using two-away data binding -->
+<div class="input-group">
+  <input type="text" name="" id="" placeholder="Enter name" [(ngModel)]="name">
+  <h3>Your name is: {{ name }} </h3>
+</div>
