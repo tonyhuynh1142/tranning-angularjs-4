@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <div *ngIf="isShowForm">
+      <input placeholder="English" [(ngModel)]="newEn">
+      <input placeholder="Vietnamese" [(ngModel)]="newVn">
+      <br>
+      <br>
+      <button (click)="addWord();" ion-button>Thêm từ mới</button>
+    </div>
+    <br>
+    <button (click)="isShowForm = true" *ngIf="!isShowForm" ion-button>Show Form</button>
+    <br>
+
+    <ion-list>
+      <ion-item *ngFor="let word of arrWords">
+        <h4 [ngStyle]="{ color: word.memorized ? 'green' : 'red' }">{{ word.en }}</h4>
+        <p> {{ word.vn }} </p>
+        <button (click)="removeWord(word.id);" ion-button color="danger">Delete</button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
