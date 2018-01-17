@@ -39,4 +39,17 @@ export class HomePage {
     const index = this.arrWords.findIndex(word => word.id === id);
     this.arrWords.splice(index, 1);
   }
+
+  filterStatus = 'all_remember';
+  getShowStatus(memorized: boolean) {
+    const showAll = this.filterStatus === 'all_remember';
+    const showRemember = this.filterStatus === 'remember' && memorized;
+    const showNotRemember = this.filterStatus === 'not_remember' && !memorized;
+
+    console.log(this.filterStatus);
+
+    return showAll || showRemember || showNotRemember;
+
+  }
+
 }

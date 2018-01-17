@@ -17,13 +17,32 @@
     <button (click)="isShowForm = true" *ngIf="!isShowForm" ion-button>Show Form</button>
     <br>
 
-    <ion-list>
-      <ion-item *ngFor="let word of arrWords">
-        <h4 [ngStyle]="{ color: word.memorized ? 'green' : 'red' }">{{ word.en }}</h4>
-        <p> {{ word.vn }} </p>
-        <button (click)="removeWord(word.id);" ion-button color="danger">Delete</button>
+    <ion-list radio-group [(ngModel)]="filterStatus">
+      <ion-item>
+        <ion-label>Xem tất vả</ion-label>
+        <ion-radio value="all_remember" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Từ đã nhớ</ion-label>
+        <ion-radio value="remember" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Từ chưa nhớ</ion-label>
+        <ion-radio value="not_remember" checked></ion-radio>
       </ion-item>
     </ion-list>
+
+    <ion-list>
+      <ion-item *ngFor="let word of arrWords">
+        <div *ngIf="getShowStatus(word.memorized);">
+          <h4 [ngStyle]="{ color: word.memorized ? 'green' : 'red' }">{{ word.en }}</h4>
+          <p> {{ word.vn }} </p>
+          <button (click)="removeWord(word.id);" ion-button color="danger">Delete</button>
+          <button (click)="word.memorized = !word.memorized" ion-button color="secondary"> {{ word.memorized ? 'Active' : 'Deactive'}} </button>
+        </div>
+      </ion-item>
+    </ion-list>
+
   </div>
 
 </ion-content>
