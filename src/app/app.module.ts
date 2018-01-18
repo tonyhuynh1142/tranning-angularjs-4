@@ -19,8 +19,10 @@ import { PersonComponent } from '../components/person/person';
 import { ListPersonComponent } from '../components/list-person/list-person';
 // import { PipeComponent } from '../components/pipe/pipe';
 
+// Import provider
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IpService } from './ip.service';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    IpService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,16 +1,12 @@
+import { Component, OnInit } from '@angular/core';
 import { IpService } from './../../app/ip.service';
-import { Component } from '@angular/core';
-// import { NavController } from 'ionic-angular';
-// import { Http } from '@angular/http';
-// import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [IpService]
 })
 
-export class HomePage {
+export class HomePage implements OnInit {
 
   newEn = '';
   newVn = '';
@@ -25,15 +21,8 @@ export class HomePage {
 
   // Create request Http
   ip: String;
-  // constructor(private http: Http) {
-  //   this.http.get('http://ip.jsontest.com/')
-  //   .toPromise()
-  //   .then( res => res.json() )
-  //   .then( resJson => this.ip = resJson.ip )
-  //   .catch( err => console.log(err) );
-  // }
-
-  constructor(private ipService : IpService) {
+  constructor(private ipService : IpService) {}
+  ngOnInit() : void {
     this.ipService.getIp()
     .then( ip => this.ip = ip)
     .catch( err => console.log(err) );
