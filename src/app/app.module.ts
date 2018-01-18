@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 
 import { ChildComponent } from './child.component';
 import { ParentCompnent } from './parent.component';
+import { CardComponent } from './card.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -13,6 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PersonComponent } from '../components/person/person';
 import { ListPersonComponent } from '../components/list-person/list-person';
+import { PipeComponent } from '../components/pipe/pipe';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPersonComponent,
     TabsPage,
     ChildComponent,
-    ParentCompnent
+    ParentCompnent,
+    CardComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule,
