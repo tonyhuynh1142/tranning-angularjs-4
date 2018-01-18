@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, PipeTransform, DatePipe } from '@angular/core';
 
 /**
  * Generated class for the PipeComponent component.
@@ -10,10 +10,14 @@ import { Component } from '@angular/core';
   selector: 'pipe',
   templateUrl: 'pipe.html'
 })
+
 export class PipeComponent {
 
   birthday = new Date(2018, 2, 12);
-
-  constructor() {}
+  person = {
+    name: 'tonyhuynh',
+    age: '24',
+  }
+  address = Promise.resolve('01 Bach Dang');
 
 }

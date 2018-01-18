@@ -1,3 +1,7 @@
-<div>
-  {{ birthday }}
-</div>
+<p>
+  Today is {{birthday | date: 'shortTime'}}
+</p>
+<p>
+  {{ person | json | uppercase }}
+</p>
+<p> {{ address | async }} </p>
