@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+// http
+import { HttpModule } from '@angular/http'
+
 import { ChildComponent } from './child.component';
 import { ParentCompnent } from './parent.component';
 import { CardComponent } from './card.component';
@@ -31,10 +34,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ChildComponent,
     ParentCompnent,
     CardComponent,
-    PipeComponent
+    PipeComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

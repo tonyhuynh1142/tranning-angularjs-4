@@ -2,6 +2,8 @@
   Today is {{birthday | date: 'shortTime'}}
 </p>
 <p>
-  {{ person | json | uppercase }}
+  {{ person.name | uppercase }}
 </p>
 <p> {{ address | async }} </p>
+
+<!-- <p> {{ 1.9 | roundNum }} </p> -->
