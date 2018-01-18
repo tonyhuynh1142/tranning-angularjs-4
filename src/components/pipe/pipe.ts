@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 
 /**
  * Generated class for the PipeComponent component.
