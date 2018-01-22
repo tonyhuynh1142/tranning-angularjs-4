@@ -1,6 +1,7 @@
-<h3> {{ cityName === '' ? 'Enter your city name ' : (cityName + 'is now ' + temp )}} </h3>
-<input placeholder="Enter your city name" [(ngModel)]='txtCityName' >
+<h3> {{ getMessage() }} </h3>
+<ion-input placeholder="Enter your city name" [(ngModel)]='txtCityName'></ion-input>
 <br>
 <br>
-<button (click)='getWeather();'>Get weather</button>
+<button ion-button (click)='getWeather();'>Get weather</button>
+
 

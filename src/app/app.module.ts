@@ -10,6 +10,7 @@ import { HttpModule } from '@angular/http'
 import { ChildComponent } from './child.component';
 import { ParentCompnent } from './parent.component';
 import { CardComponent } from './card.component';
+import { SignInComponent } from './sign-in.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -38,7 +39,8 @@ import { WeatherService } from '../components/weather-app/weather.service';
     ChildComponent,
     ParentCompnent,
     CardComponent,
-    WeatherAppComponent
+    WeatherAppComponent,
+    SignInComponent
     // PipeComponent
   ],
   imports: [
