@@ -17,12 +17,14 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PersonComponent } from '../components/person/person';
 import { ListPersonComponent } from '../components/list-person/list-person';
+import { WeatherAppComponent } from '../components/weather-app/weather-app';
 // import { PipeComponent } from '../components/pipe/pipe';
 
 // Import provider
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IpService } from './ip.service';
+import { WeatherService } from '../components/weather-app/weather.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { IpService } from './ip.service';
     TabsPage,
     ChildComponent,
     ParentCompnent,
-    CardComponent
+    CardComponent,
+    WeatherAppComponent
     // PipeComponent
   ],
   imports: [
@@ -55,6 +58,7 @@ import { IpService } from './ip.service';
     StatusBar,
     SplashScreen,
     IpService,
+    WeatherService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
