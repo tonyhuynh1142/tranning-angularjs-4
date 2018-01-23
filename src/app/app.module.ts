@@ -1,6 +1,7 @@
 // import { ComponentsModule } from './../components/components.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -11,6 +12,7 @@ import { ChildComponent } from './child.component';
 import { ParentCompnent } from './parent.component';
 import { CardComponent } from './card.component';
 import { SignInComponent } from './sign-in.component';
+import { SignUpComponent } from './sign-up.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -41,12 +43,14 @@ import { SignInService } from './sign-in.service';
     ParentCompnent,
     CardComponent,
     WeatherAppComponent,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent
     // PipeComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
