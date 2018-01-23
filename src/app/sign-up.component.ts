@@ -41,8 +41,6 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
     <br><br>
     <button ion-button type="submit" block [disabled]="formSignUp.invalid">Submit</button>
   </form>
-  <code>{{ formSignUp.controls.email.errors | json }}</code>
-  <code>{{ formSignUp.controls.password.errors | json }}</code>
   `
 })
 
