@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SignInService } from './sign-in.service';
+// import { Http, Headers } from '@angular/http';
+// import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-sign-in',
@@ -43,6 +46,7 @@ import { Component } from '@angular/core';
     <br><br>
     <button [disabled]="formSignIn.invalid" ion-button >Submit</button>
   </form>
+  <br><br>
   <p> {{ txtEmail.errors | json }} </p><br>
   <p> {{ txtPassword.errors | json }} </p>
   <p> {{ formSignIn.value | json }} </p>
@@ -53,7 +57,13 @@ export class SignInComponent {
   // email = '';
   // password = '';
 
+  constructor(private signInService: SignInService) {}
+
   onSubmit(formSignIn) {
-    console.log(formSignIn.value);
+
+    this.signInService.sendPost(formSignIn.value)
+    .then( result => console.log(result))
+    .catch( err => console.log(err));
   }
+
 }

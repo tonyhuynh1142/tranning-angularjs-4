@@ -26,6 +26,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IpService } from './ip.service';
 import { WeatherService } from '../components/weather-app/weather.service';
+import { SignInService } from './sign-in.service';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { WeatherService } from '../components/weather-app/weather.service';
     SplashScreen,
     IpService,
     WeatherService,
+    SignInService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
