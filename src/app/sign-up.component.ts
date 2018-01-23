@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,8 +10,10 @@ import { FormControl, FormGroup } from '@angular/forms';
       <ion-input
         placeholder="Email..."
         formControlName="email"
+        email
       > </ion-input>
     </ion-item>
+    <ion-label style="color: red;" *ngIf="formSignUp.get('email').touched && formSignUp.get('email').invalid" stacked >Email is required</ion-label>
     <ion-item>
       <ion-label>Password</ion-label>
       <ion-input
@@ -20,6 +22,7 @@ import { FormControl, FormGroup } from '@angular/forms';
         formControlName="password"
       ></ion-input>
     </ion-item>
+    <ion-label style="color: red;" *ngIf="formSignUp.get('password').touched && formSignUp.get('password').invalid" stacked >Password is required</ion-label>
     <br><br>
     <div formGroupName="subjects">
       <ion-item>
@@ -36,23 +39,25 @@ import { FormControl, FormGroup } from '@angular/forms';
       </ion-item>
     </div>
     <br><br>
-    <button ion-button type="submit" block>Add Todo</button>
+    <button ion-button type="submit" block [disabled]="formSignUp.invalid">Submit</button>
   </form>
   `
 })
 
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
 
   formSignUp : FormGroup;
 
-  constructor() {
-    this.formSignUp = new FormGroup({
-      email: new  FormControl(),
-      password: new  FormControl(),
-      subjects: new FormGroup({
-        nodejs: new  FormControl(),
-        angularjs: new  FormControl(),
-        reactjs: new  FormControl()
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formSignUp = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      subjects: this.fb.group({
+        nodejs: false,
+        angularjs: false,
+        reactjs: false
       })
     });
   }
