@@ -41,6 +41,8 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
     <br><br>
     <button ion-button type="submit" block [disabled]="formSignUp.invalid">Submit</button>
   </form>
+  <code>{{ formSignUp.controls.email.errors | json }}</code>
+  <code>{{ formSignUp.controls.password.errors | json }}</code>
   `
 })
 
@@ -52,7 +54,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.formSignUp = this.fb.group({
-      email: ['', Validators.required],
+      email: ['', [ Validators.email ,gmailValidator]],
       password: ['', Validators.required],
       subjects: this.fb.group({
         nodejs: false,
@@ -66,4 +68,11 @@ export class SignUpComponent implements OnInit {
     console.log(this.formSignUp.value);
   }
 
+}
+
+function gmailValidator(FormControl: FormControl) {
+  if (FormControl.value.includes('@gmail.com')) {
+    return null;
+  }
+  return { gmail: true };
 }
